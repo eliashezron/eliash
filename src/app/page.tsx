@@ -1,18 +1,19 @@
 import type { ReactNode } from "react";
 
 const links = {
-  tuningForks: "#",
-  bella: "#",
-  oneramp: "#",
-  vifiLabs: "#",
-  starkware: "#",
-  nethermind: "#",
-  medium: "#",
-  x: "#",
-  github: "#",
+  tuningForks: "https://tunningforks.co",
+  bella: "https://t.me/useBellaBot",
+  oneramp: "https://oneramp.io",
+  vifiLabs: "https://vifilabs.xyz",
+  starkware: "https://starkware.co",
+  nethermind: "https://www.nethermind.io/",
+  medium: "https://medium.com/@eliashezron",
+  x: "https://x.com/0xeliashezron",
+  github: "https://github.com/eliashezron",
   blog: "#",
-  telegram: "#",
-  email: "mailto:",
+  telegram: "https://t.me/useBellaBot",
+  email: "opioeliashezron@gmail.com",
+  linkedin: "https://www.linkedin.com/in/eliashezron"
 } as const;
 
 function Ext({ href, children }: { href: string; children: ReactNode }) {
@@ -48,18 +49,10 @@ export default function Home() {
       </p>
 
       <p>
-        before this, i built and grew payment products for emerging markets,
-        where local money meets crypto rails: mobile money, stablecoins,
-        on/off-ramps, and the checkout and onboarding flows that decide whether
-        a user finishes a transaction.
-      </p>
-
-      <p>
         i founded <Ext href={links.oneramp}>oneramp</Ext>, a fiat-to-stablecoin
         on/off-ramp that reached 25k+ users and $1.2m+ in volume across 7
         countries before it was acquired by{" "}
-        <Ext href={links.vifiLabs}>vifi labs</Ext>. i stayed on after the
-        acquisition to build its checkout widget and wallet apps.
+        <Ext href={links.vifiLabs}>vifi labs</Ext>
       </p>
 
       <p>
@@ -70,23 +63,13 @@ export default function Home() {
       </p>
 
       <p>
-        now focused on ai agents for everyone, built on what i learned shipping
-        payments in africa.
-      </p>
-
-      <p>
         i write on <Ext href={links.medium}>medium</Ext>, post on{" "}
         <Ext href={links.x}>x</Ext>, and push code on{" "}
         <Ext href={links.github}>github</Ext>.
       </p>
-
+      
       <p>
-        blog:{" "}
-        <Ext href={links.blog}>notes on payments, crypto, and ai</Ext>
-      </p>
-
-      <p>
-        contact: <Ext href={links.telegram}>telegram</Ext>,{" "}
+        contact: <Ext href={links.linkedin}>linkedin</Ext>,{" "}
         <a href={links.email}>email</a>
       </p>
     </main>
