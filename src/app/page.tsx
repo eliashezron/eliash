@@ -36,14 +36,14 @@ export default function Home() {
 
       <p>
         i&apos;m building <Ext href={links.bella}>bella</Ext> at tuning forks: a
-        task assistant that lives in your whatsapp. send her a text or a voice
+        task assistant that lives in your whatsapp and Telegram. send her a text or a voice
         note in your own language, and she manages your email and calendar, sets
         reminders, and finds you the best deals on flights and insurance. she
         only pays for anything once you approve it.
       </p>
 
       <p>
-        why: billions of people run their lives and businesses through whatsapp,
+        why: billions of people run their lives and businesses through whatsapp and Telegram,
         in the languages they grew up speaking. ai agents should work for all of
         them, not just a few.
       </p>
@@ -67,7 +67,7 @@ export default function Home() {
         <Ext href={links.x}>x</Ext>, and push code on{" "}
         <Ext href={links.github}>github</Ext>.
       </p>
-      
+
       <p>
         contact: <Ext href={links.linkedin}>linkedin</Ext>,{" "}
         <a href={links.email}>email</a>
