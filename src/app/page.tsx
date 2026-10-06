@@ -1,69 +1,94 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import type { ReactNode } from "react";
+
+const links = {
+  tuningForks: "#",
+  bella: "#",
+  oneramp: "#",
+  vifiLabs: "#",
+  starkware: "#",
+  nethermind: "#",
+  medium: "#",
+  x: "#",
+  github: "#",
+  blog: "#",
+  telegram: "#",
+  email: "mailto:",
+} as const;
+
+function Ext({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
+  );
+}
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main>
+      <h1>Elias Hezron Opio</h1>
+
+      <p className="muted">
+        founder, <Ext href={links.tuningForks}>tuning forks</Ext> · product
+        &amp; growth
+      </p>
+
+      <p>
+        i&apos;m building <Ext href={links.bella}>bella</Ext> at tuning forks: a
+        task assistant that lives in your whatsapp. send her a text or a voice
+        note in your own language, and she manages your email and calendar, sets
+        reminders, and finds you the best deals on flights and insurance. she
+        only pays for anything once you approve it.
+      </p>
+
+      <p>
+        why: billions of people run their lives and businesses through whatsapp,
+        in the languages they grew up speaking. ai agents should work for all of
+        them, not just a few.
+      </p>
+
+      <p>
+        before this, i built and grew payment products for emerging markets,
+        where local money meets crypto rails: mobile money, stablecoins,
+        on/off-ramps, and the checkout and onboarding flows that decide whether
+        a user finishes a transaction.
+      </p>
+
+      <p>
+        i founded <Ext href={links.oneramp}>oneramp</Ext>, a fiat-to-stablecoin
+        on/off-ramp that reached 25k+ users and $1.2m+ in volume across 7
+        countries before it was acquired by{" "}
+        <Ext href={links.vifiLabs}>vifi labs</Ext>. i stayed on after the
+        acquisition to build its checkout widget and wallet apps.
+      </p>
+
+      <p>
+        previously <Ext href={links.starkware}>starkware</Ext> (africa ventures
+        fund), <Ext href={links.vifiLabs}>vifi labs</Ext>,{" "}
+        <Ext href={links.oneramp}>oneramp</Ext>,{" "}
+        <Ext href={links.nethermind}>nethermind</Ext>.
+      </p>
+
+      <p>
+        now focused on ai agents for everyone, built on what i learned shipping
+        payments in africa.
+      </p>
+
+      <p>
+        i write on <Ext href={links.medium}>medium</Ext>, post on{" "}
+        <Ext href={links.x}>x</Ext>, and push code on{" "}
+        <Ext href={links.github}>github</Ext>.
+      </p>
+
+      <p>
+        blog:{" "}
+        <Ext href={links.blog}>notes on payments, crypto, and ai</Ext>
+      </p>
+
+      <p>
+        contact: <Ext href={links.telegram}>telegram</Ext>,{" "}
+        <a href={links.email}>email</a>
+      </p>
+    </main>
   );
 }
