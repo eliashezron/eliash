@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
+import { siteUrl } from "./layout";
 
 const links = {
-  tuningForks: "https://tunningforks.co",
-  bella: "https://t.me/useBellaBot",
+  tuningForks: "https://tuningforks.co",
+  bella: "https://tuningforks.co/bella",
   oneramp: "https://oneramp.io",
   vifiLabs: "https://vifilabs.xyz",
   starkware: "https://starkware.co",
@@ -12,7 +13,7 @@ const links = {
   github: "https://github.com/eliashezron",
   blog: "#",
   telegram: "https://t.me/useBellaBot",
-  email: "opioeliashezron@gmail.com",
+  email: "mailto:opioeliashezron@gmail.com",
   linkedin: "https://www.linkedin.com/in/eliashezron"
 } as const;
 
@@ -24,9 +25,29 @@ function Ext({ href, children }: { href: string; children: ReactNode }) {
   );
 }
 
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Elias Hezron Opio",
+  url: siteUrl,
+  jobTitle: "Founder",
+  worksFor: {
+    "@type": "Organization",
+    name: "Tuning Forks",
+    url: links.tuningForks,
+  },
+  sameAs: [links.x, links.github, links.linkedin, links.medium],
+};
+
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(person).replace(/</g, "\\u003c"),
+        }}
+      />
       <h1>Elias Hezron Opio</h1>
 
       <p className="muted">
@@ -35,7 +56,8 @@ export default function Home() {
       </p>
 
       <p>
-        i&apos;m building <Ext href={links.bella}>bella</Ext> at tuning forks: a
+        i&apos;m building <Ext href={links.bella}>bella</Ext> at{" "}
+        <Ext href={links.tuningForks}>tuning forks</Ext>: a
         task assistant that lives in your telegram. send her a text or a voice
         note in your own language, and she manages your email and calendar, sets
         reminders, and finds you the best deals on flights and insurance. she
