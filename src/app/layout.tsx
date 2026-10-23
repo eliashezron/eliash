@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const siteUrl = "https://www.eliash.cc";
+export const siteUrl = "https://eliash.cc";
 
 const title = "Elias Hezron Opio";
 const description =
-  "founder, tuning forks. building bella, a whatsapp task assistant for everyone.";
+  "founder, tuning forks. building bella, a task assistant for everyone.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
